@@ -73,8 +73,6 @@ def main_loop():
             message_dict = json.loads(messages.model_dump_json())
             most_recent_message = message_dict['data'][0]
             assistant_message = most_recent_message['content'][0]['text']['value']
-            print(f'assistannt message: {assistant_message}')
-
             print(f"{user_name_input}: {assistant_message}")
 
 
