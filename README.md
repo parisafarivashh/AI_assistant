@@ -9,6 +9,33 @@ Assistants have "threads" which allow them to store and access message history.
 An assistant and a thread can be "run" together, 
 which instructs the AI to work with a specific set of messages. 
 
+to create assistant and thread:
+```python
+ assistant = self.client.beta.assistants.create(
+       name=assistant_name,
+       instructions=f"""
+          You are a friend. Your name is {assistant_name}. You 
+          are having a vocal conversation with a user. 
+          You will never output any markdown or formatted text of any 
+          kind, and you will speak in a concise, highly conversational 
+          manner. You will adopt any persona that the user may ask of you.
+          """,
+       model="gpt-4-1106-preview",
+   )
+   # Create a thread
+   thread = self.client.beta.threads.create()
+```
+
+to send-message:
+```python
+
+ thread_message = self.client.beta.threads.messages.create(
+     thread_id,
+     role="user",
+     content=task,
+ )
+ return thread_message
+```
 
 We have created our assistant, thread, and message functions, 
 we need a way to store our sessions. 
