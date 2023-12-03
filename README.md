@@ -1,6 +1,6 @@
 # AI_assistant
 
- # Simple agent with openai
+ # Simple Agent with openai
 
 OpenAI assistants are a way to interact with an LLM with persistent session data. 
 This means that if you call a pre-defined thread of messages and an assistant ID,
@@ -10,20 +10,19 @@ An assistant and a thread can be "run" together,
 which instructs the AI to work with a specific set of messages. 
 
 
-Now that we have created our assistant, thread, and message functions, 
+We have created our assistant, thread, and message functions, 
 we need a way to store our sessions. 
 The solution:
-I was creating a JSON file stored in the working directory that stores your 
-sessions and assistant IDs. 
-This makes it easy to choose which assistant you want to talk to;
-you can also name them to help you remember who is who.
+   - ) I was creating a JSON file stored in the working directory that stores your 
+   sessions and assistant IDs.This makes it easy to choose which assistant you want to talk to,
+   you can also name them to help you remember who is who.
 
 
 When you want to chat with one of your assistants, 
 run the script, and you’ll be asked to choose an existing session from the 
 set that is printed to the console or to make a new assistant.
 Here is the function that saves your assistant’s data locally:
-```commandline
+```python
     @staticmethod
     def _save_session(
             assistant_id,
@@ -58,7 +57,7 @@ Here is the function that saves your assistant’s data locally:
 each time that you are chatting with the AI, and say “exit”, this function is 
 automatically called to scrape your messages from the cloud and save them into 
 a text file:
-```commandline
+```python
 
     def _collect_message_history(self, thread_id, user_name_input):
         """ This function downloads and writes your entire chat history
@@ -90,7 +89,7 @@ To start, simply run the code and follow the instructions.
 To properly end a session, type “exit”
 
 output
-```commandline
+```terminal
 Type 'new' to make a new assistant session. Press 'Enter' to choose an existing assistant session: new
 
 Please type a name for this chat: omadeus
