@@ -140,3 +140,10 @@ Please type your question: whats your name
 omadeus: Hey, I'm still Omadeus. What's up? Time for a new topic, or are you still feeling bored?
 
 ```
+
+## function calling
+Function calling allows you to describe custom functions to the assistant, for use in accessing external APIs.
+This should make it easier for you to call external functions by generating output in a JSON format which is expected by an API.
+And the JSON being pre-populated with the relevant input arguments.
+Functions have been part of the Chat Completion API and now Assistants also support the functionality.
+
